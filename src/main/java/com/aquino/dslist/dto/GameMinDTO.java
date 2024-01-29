@@ -1,6 +1,7 @@
 package com.aquino.dslist.dto;
 
 import com.aquino.dslist.entities.Game;
+import com.aquino.dslist.projections.GameMinProjection;
 
 public record GameMinDTO(
 
@@ -12,5 +13,9 @@ public record GameMinDTO(
 
     public GameMinDTO(Game game) {
         this(game.getId(), game.getTitle(), game.getYear(), game.getImgUrl(), game.getShortDescription());
+    }
+
+    public GameMinDTO(GameMinProjection projection) {
+        this(projection.getId(), projection.getTitle(), projection.getYear(), projection.getImgUrl(), projection.getShortDescription());
     }
 }

@@ -3,6 +3,7 @@ package com.aquino.dslist.services;
 import com.aquino.dslist.dto.GameDTO;
 import com.aquino.dslist.dto.GameMinDTO;
 import com.aquino.dslist.entities.Game;
+import com.aquino.dslist.projections.GameMinProjection;
 import com.aquino.dslist.repository.GameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,5 +29,11 @@ public class GameService {
         var result = gameRepository.findAll();
         List<GameMinDTO> dto = result.stream().map(g -> new GameMinDTO(g)).toList();
         return dto;
+    }
+
+    @Transactional(readOnly = true)
+    public List<GameMinDTO> findByList(Long listId) {
+        List<GameMinProjection> result = gameRepository.searchByList(listId);
+        return result.stream().map(g -> new GameMinDTO(g)).toList();
     }
 }
