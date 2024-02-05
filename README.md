@@ -28,11 +28,8 @@ O projeto está organizado nos seguintes pacotes:
 2. Importe o projeto em sua IDE Java favorita.
 3. Certifique-se de ter todas as dependências necessárias instaladas.
 4. Execute a aplicação.
-5. Utilize ferramentas como Postman ou cURL para interagir com os endpoints da API.
+5. Utilize ferramentas como Postman ou Insomnia para interagir com os endpoints da API.
 
-## Contribuindo
-
-Contribuições são bem-vindas! Sinta-se à vontade para propor melhorias, correções de bugs ou novas funcionalidades através de pull requests.
 
 ## Autor
 
